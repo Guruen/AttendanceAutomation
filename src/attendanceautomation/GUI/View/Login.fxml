@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import java.net.URL?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
@@ -12,7 +13,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
-<?import java.net.URL?>
 
 <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="338.0" prefWidth="393.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="attendanceautomation.GUI.Controller.LoginController">
     <stylesheets>
@@ -42,9 +42,9 @@
             <Image url="@../../../../gfx/EASYDVEST.png" />
          </image>
       </ImageView>
-      <TextField layoutX="47.0" layoutY="168.0" prefHeight="25.0" prefWidth="294.0" promptText="Username" />
-      <PasswordField layoutX="47.0" layoutY="210.0" prefHeight="25.0" prefWidth="294.0" promptText="Password" />
-      <JFXButton alignment="CENTER" layoutX="152.0" layoutY="263.0" lineSpacing="10.0" ripplerFill="BLACK" text="Log In" textAlignment="CENTER">
+      <TextField fx:id="txtfieldUsername" layoutX="47.0" layoutY="168.0" prefHeight="25.0" prefWidth="294.0" promptText="Username" />
+      <PasswordField fx:id="passwordfieldPassword" layoutX="47.0" layoutY="210.0" prefHeight="25.0" prefWidth="294.0" promptText="Password" />
+      <JFXButton fx:id="btnLogIn" alignment="CENTER" layoutX="152.0" layoutY="263.0" lineSpacing="10.0" ripplerFill="BLACK" text="Log In" textAlignment="CENTER">
          <font>
             <Font size="20.0" />
          </font>

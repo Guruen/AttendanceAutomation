@@ -5,9 +5,14 @@
  */
 package attendanceautomation.GUI.Controller;
 
+import com.jfoenix.controls.JFXListView;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.chart.BarChart;
+import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 
 /**
  * FXML Controller class
@@ -15,6 +20,23 @@ import javafx.fxml.Initializable;
  * @author BBran
  */
 public class TeachViewController implements Initializable {
+
+    @FXML
+    private Label lblSelectedclass;
+    @FXML
+    private JFXListView<?> listviewStudents;
+    @FXML
+    private ImageView imgStudent;
+    @FXML
+    private Label lblStudentname;
+    @FXML
+    private Label lblEmail;
+    @FXML
+    private Label lblPhone;
+    @FXML
+    private JFXListView<?> listviewAbsenceDays;
+    @FXML
+    private BarChart<?, ?> chartAbsenceperDay;
 
     /**
      * Initializes the controller class.

@@ -5,6 +5,7 @@
  */
 package attendanceautomation.GUI.Controller;
 
+import attendanceautomation.GUI.Model.AttendanceAutomationModel;
 import com.jfoenix.controls.JFXButton;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -32,14 +33,25 @@ public class LoginController implements Initializable {
    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+
     }    
 
     @FXML
     private void handleLogIn(ActionEvent event)
     {
         String username = txtfieldUsername.getText();
-        String password = passwordfieldPassword.getText();
+                       
+        
+        if (username == "Teacher")
+        {
+            
+        }
+        
+        if (username == "Student")
+        {
+            
+        }
+
         
         
     }

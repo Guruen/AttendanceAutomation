@@ -13,7 +13,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="700.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="attendanceautomation.GUI.Controller.StudViewController">
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="700.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="attendanceautomation.GUI.Controller.StudViewController">
     <stylesheets>
         <URL value="@/attendanceautomation/GUI/CSS/guiStyle.css" />
     </stylesheets>
@@ -68,12 +68,12 @@
             <InnerShadow height="0.0" radius="0.0" width="0.0" />
          </effect>
       </Rectangle>
-      <Label alignment="CENTER" layoutX="396.0" layoutY="49.0" prefHeight="27.0" prefWidth="290.0" text="Attendance">
+      <Label alignment="CENTER" layoutX="396.0" layoutY="49.0" prefHeight="27.0" prefWidth="283.0" text="Attendance">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <PieChart fx:id="piechartAttendance" layoutX="438.0" layoutY="85.0" prefHeight="200.0" prefWidth="200.0" title="piechart" />
+      <PieChart fx:id="piechartAttendance" layoutX="414.0" layoutY="76.0" prefHeight="175.0" prefWidth="246.0" />
       <Rectangle fill="#ffffff1c" height="169.0" layoutX="20.0" layoutY="312.0" stroke="#bcbcbc" strokeLineCap="ROUND" strokeType="INSIDE" width="660.0">
          <effect>
             <InnerShadow height="0.0" radius="0.0" width="0.0" />
@@ -85,5 +85,15 @@
          </font>
       </Label>
       <JFXListView fx:id="listviewMissedClasses" layoutX="34.0" layoutY="357.0" prefHeight="111.0" prefWidth="634.0" />
+      <Label layoutX="458.0" layoutY="273.0" prefHeight="27.0" prefWidth="79.0" text="Absence:">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblAbsencepercent" layoutX="537.0" layoutY="273.0" prefHeight="27.0" prefWidth="79.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

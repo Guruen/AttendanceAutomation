@@ -11,4 +11,5 @@ package attendanceautomation.GUI.Model;
  */
 public class AttendanceAutomationModel {
     
+
 }

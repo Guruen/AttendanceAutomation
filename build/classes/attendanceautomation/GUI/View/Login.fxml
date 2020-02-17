@@ -44,7 +44,7 @@
          </effect></Rectangle>
       <TextField fx:id="txtfieldUsername" layoutX="47.0" layoutY="168.0" prefHeight="25.0" prefWidth="294.0" promptText="Username" />
       <PasswordField fx:id="passwordfieldPassword" layoutX="47.0" layoutY="210.0" prefHeight="25.0" prefWidth="294.0" promptText="Password" />
-      <JFXButton fx:id="btnLogIn" alignment="CENTER" layoutX="152.0" layoutY="263.0" lineSpacing="10.0" ripplerFill="BLACK" text="Log In" textAlignment="CENTER">
+      <JFXButton fx:id="btnLogIn" alignment="CENTER" layoutX="152.0" layoutY="263.0" lineSpacing="10.0" onAction="#handleLogIn" ripplerFill="BLACK" text="Log In" textAlignment="CENTER">
          <font>
             <Font size="20.0" />
          </font>

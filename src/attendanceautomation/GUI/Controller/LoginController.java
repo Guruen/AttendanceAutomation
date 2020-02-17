@@ -34,5 +34,14 @@ public class LoginController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+    @FXML
+    private void handleLogIn(ActionEvent event)
+    {
+        String username = txtfieldUsername.getText();
+        String password = passwordfieldPassword.getText();
+        
+        
+    }
     
 }

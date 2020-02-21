@@ -25,7 +25,8 @@ import javafx.stage.Stage;
  *
  * @author BBran
  */
-public class LoginController implements Initializable {
+public class LoginController implements Initializable
+{
 
     private Label label;
     @FXML
@@ -36,43 +37,54 @@ public class LoginController implements Initializable {
     private JFXButton btnLogIn;
 
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
+    public void initialize(URL url, ResourceBundle rb)
+    {
 
     }
 
     @FXML
-    private void handleLogIn(ActionEvent event) throws IOException {
+    private void handleLogIn(ActionEvent event) throws IOException
+    {
         String username = txtfieldUsername.getText();
 
-        if (username.equals("Teacher")) {
-            try {
+        if (username.equals("Teacher"))
+        {
+            try
+            {
                 Parent root = FXMLLoader.load(getClass().getResource("/attendanceautomation/GUI/View/TeachView.fxml"));
 
                 Scene scene = new Scene(root);
                 Stage stage = new Stage();
-                stage.setTitle("Teacher");
+                stage.setTitle("Teacher Menu");
+                Stage Currentstage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                Currentstage.close();
                 stage.setScene(scene);
                 stage.show();
-            } catch (IOException e) {
+            } catch (IOException e)
+            {
                 e.printStackTrace();
             }
         }
 
-        if (username.equals("Student")) {
-            try {
+        if (username.equals("Student"))
+        {
+            try
+            {
                 Parent root = FXMLLoader.load(getClass().getResource("/attendanceautomation/GUI/View/StudView.fxml"));
 
                 Scene scene = new Scene(root);
                 Stage stage = new Stage();
-                stage.setTitle("Student");
+                stage.setTitle("Student Menu");
+                Stage Currentstage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                Currentstage.close();
                 stage.setScene(scene);
                 stage.show();
-            } catch (IOException e) {
+            } catch (IOException e)
+            {
                 e.printStackTrace();
             }
         }
-    
 
-}
+    }
 
 }

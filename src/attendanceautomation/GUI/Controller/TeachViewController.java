@@ -5,6 +5,7 @@
  */
 package attendanceautomation.GUI.Controller;
 
+import attendanceautomation.GUI.Model.AttendanceAutomationModel;
 import com.jfoenix.controls.JFXListView;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -42,16 +43,20 @@ public class TeachViewController implements Initializable
     @FXML
     private BarChart<?, ?> chartAbsenceperDay;
 
+    private AttendanceAutomationModel model;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
-        lblStudentname.setText("John Doe");
-        lblEmail.setText("JohnDoe@easv.dk");
-        lblPhone.setText("88 88 88 88");
-        lblSelectedclass.setText("SDE");
+        
+        model = new AttendanceAutomationModel();
+        
+        lblStudentname.setText(model.selectedStudent().get(0));
+        lblEmail.setText(model.selectedStudent().get(1));
+        lblPhone.setText(model.selectedStudent().get(2));
+        lblSelectedclass.setText(model.selectedClass());
         handleStudentList();
         handleStudentAbsence();
         handleBarChart();
@@ -59,36 +64,23 @@ public class TeachViewController implements Initializable
 
     public void handleStudentList()
     {
-        ObservableList<String> currentClass = FXCollections.observableArrayList(
-                "John Doe",
-                "Bill Gates"
-        );
+        ObservableList<String> currentClass = FXCollections.observableArrayList(model.absentStudentList());
 
         listviewStudents.setItems(currentClass);
     }
 
     public void handleStudentAbsence()
     {
-        ObservableList<String> currentClass = FXCollections.observableArrayList(
-                "16-02-2020",
-                "17-02-2020",
-                "18-02-2020"
-        );
+        ObservableList<String> currentClass = FXCollections.observableArrayList(model.studentAbsentDays());
 
         listviewAbsenceDays.setItems(currentClass);
     }
     
     public void handleBarChart()
     {
-        XYChart.Series dataSeries1 = new XYChart.Series();
 
-        dataSeries1.getData().add(new XYChart.Data("Monday", 10));
-        dataSeries1.getData().add(new XYChart.Data("Toesday", 0));
-        dataSeries1.getData().add(new XYChart.Data("Wednesday", 50));
-        dataSeries1.getData().add(new XYChart.Data("Thursday", 20));
-        dataSeries1.getData().add(new XYChart.Data("Friday", 40));
         
-        chartAbsenceperDay.getData().add(dataSeries1);
+        chartAbsenceperDay.getData().add(model.absencePerDay());
     }
     
 

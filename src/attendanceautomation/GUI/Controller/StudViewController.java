@@ -5,6 +5,7 @@
  */
 package attendanceautomation.GUI.Controller;
 
+import attendanceautomation.GUI.Model.AttendanceAutomationModel;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
 import java.net.URL;
@@ -35,22 +36,26 @@ public class StudViewController implements Initializable {
     @FXML
     private JFXListView<String> listviewMissedClasses;
 
-    private int absence = 20;
     @FXML
     private Label lblAbsencepercent;
     @FXML
     private Label lblCurrentClass;
     
+    private int absence;
+    private AttendanceAutomationModel model;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+       
+       model = new AttendanceAutomationModel(); 
+       absence = Integer.parseInt(model.selectedStudent().get(3));
        handlePieChart();
        handleCurrentclass();
        handleMissedClasses();
        lblAbsencepercent.setText(absence + "%");
-       lblStudentFullname.setText("John Doe");
+       lblStudentFullname.setText(model.selectedStudent().get(0));
        lblCurrentClass.setText("SDE");
     }    
            
@@ -72,11 +77,7 @@ public class StudViewController implements Initializable {
     
     public void handleCurrentclass()
     {
-        ObservableList<String> currentClass = FXCollections.observableArrayList(
-                "SDE - C3 (9:00-11:30)",
-                "SCO - C3 (12:00-14:30)"
-                
-        );
+        ObservableList<String> currentClass = FXCollections.observableArrayList(model.currentClass());
         
         listviewTodaysClasses.setItems(currentClass);
         listviewTodaysClasses.setFocusTraversable(false);
@@ -85,12 +86,7 @@ public class StudViewController implements Initializable {
     
     public void handleMissedClasses()
     {
-        ObservableList<String> missedClass = FXCollections.observableArrayList(
-                "SDE | (Monday - 11.01.2020)",
-                "SCO | (Friday - 15.01.2020)",
-                "DBO | (Monday - 18.01.2020)"
-                
-        );
+        ObservableList<String> missedClass = FXCollections.observableArrayList(model.missedClass());
         
         listviewMissedClasses.setItems(missedClass);
         listviewMissedClasses.setFocusTraversable(false);

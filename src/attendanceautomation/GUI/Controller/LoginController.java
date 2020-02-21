@@ -46,11 +46,11 @@ public class LoginController implements Initializable {
 
         if (username.equals("Teacher")) {
             try {
-                Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("attendanceautomation/GUI/View/TeachView.fxml"));
+                Parent root = FXMLLoader.load(getClass().getResource("/attendanceautomation/GUI/View/TeachView.fxml"));
 
                 Scene scene = new Scene(root);
                 Stage stage = new Stage();
-                stage.setTitle("New Window");
+                stage.setTitle("Teacher");
                 stage.setScene(scene);
                 stage.show();
             } catch (IOException e) {
@@ -60,11 +60,11 @@ public class LoginController implements Initializable {
 
         if (username.equals("Student")) {
             try {
-                Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("attendanceautomation/GUI/View/StudView.fxml"));
+                Parent root = FXMLLoader.load(getClass().getResource("/attendanceautomation/GUI/View/StudView.fxml"));
 
                 Scene scene = new Scene(root);
                 Stage stage = new Stage();
-                stage.setTitle("New Window");
+                stage.setTitle("Student");
                 stage.setScene(scene);
                 stage.show();
             } catch (IOException e) {

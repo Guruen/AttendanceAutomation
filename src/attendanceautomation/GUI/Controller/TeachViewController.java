@@ -13,6 +13,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.chart.BarChart;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 
@@ -53,6 +54,7 @@ public class TeachViewController implements Initializable
         lblSelectedclass.setText("SDE");
         handleStudentList();
         handleStudentAbsence();
+        handleBarChart();
     }
 
     public void handleStudentList()
@@ -74,6 +76,19 @@ public class TeachViewController implements Initializable
         );
 
         listviewAbsenceDays.setItems(currentClass);
+    }
+    
+    public void handleBarChart()
+    {
+        XYChart.Series dataSeries1 = new XYChart.Series();
+
+        dataSeries1.getData().add(new XYChart.Data("Monday", 10));
+        dataSeries1.getData().add(new XYChart.Data("Toesday", 0));
+        dataSeries1.getData().add(new XYChart.Data("Wednesday", 50));
+        dataSeries1.getData().add(new XYChart.Data("Thursday", 20));
+        dataSeries1.getData().add(new XYChart.Data("Friday", 40));
+        
+        chartAbsenceperDay.getData().add(dataSeries1);
     }
     
 

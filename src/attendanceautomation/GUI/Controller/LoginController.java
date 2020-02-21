@@ -41,17 +41,38 @@ public class LoginController implements Initializable {
     }
 
     @FXML
-    private void handleLogIn(ActionEvent event) {
+    private void handleLogIn(ActionEvent event) throws IOException {
         String username = txtfieldUsername.getText();
 
         if (username.equals("Teacher")) {
+            try {
+                Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("attendanceautomation/GUI/View/TeachView.fxml"));
 
+                Scene scene = new Scene(root);
+                Stage stage = new Stage();
+                stage.setTitle("New Window");
+                stage.setScene(scene);
+                stage.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
 
         if (username.equals("Student")) {
+            try {
+                Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("attendanceautomation/GUI/View/StudView.fxml"));
 
+                Scene scene = new Scene(root);
+                Stage stage = new Stage();
+                stage.setTitle("New Window");
+                stage.setScene(scene);
+                stage.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
+    
 
-    }
+}
 
 }
